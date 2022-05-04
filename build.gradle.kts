@@ -49,5 +49,15 @@ subprojects {
                 from(components["java"])
             }
         }
+
+        repositories {
+            maven {
+                url = uri("https://maven.imanity.dev/repository/imanity-libraries/")
+                credentials {
+                    username = findProperty("imanityLibrariesUsername").toString()
+                    password = findProperty("imanityLibrariesPassword").toString()
+                }
+            }
+        }
     }
 }
